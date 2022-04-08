@@ -1,6 +1,7 @@
 #!/bin/bash -l
 #SBATCH -A uppmax2022-2-5
 #SBATCH -p core
+#SBATCH -n 4
 #SBATCH -J assemble_durian_things
 #SBATCH -t 20:00:00
 #SBATCH --mail-type=ALL
@@ -18,7 +19,7 @@ module load canu/2.2
 # Actually run CANU
 canu 
 -p assembly_output.outfile 
--d canu_assembly 
+-d canu_assembly
 genomeSize=42.1g 
 -pacbio /~/genome_analysis/link_to_paper4_data/pacbio_data/SRR6037732_scaffold_06.fq.gz
 
