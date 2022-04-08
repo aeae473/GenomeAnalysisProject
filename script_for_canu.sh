@@ -1,5 +1,6 @@
 #!/bin/bash -l
 #SBATCH -A uppmax2022-2-5
+#SBATCH -M snowy
 #SBATCH -p core
 #SBATCH -n 4
 #SBATCH -J assemble_durian_things
@@ -17,11 +18,12 @@ module load bioinfo-tools
 module load canu/2.2
 
 # Actually run CANU
-canu 
--p assembly_output.outfile 
--d canu_assembly
-genomeSize=42.1g 
--pacbio /~/genome_analysis/link_to_paper4_data/pacbio_data/SRR6037732_scaffold_06.fq.gz
+canu \
+-p assembly_output.outfile \
+-d canu_assembly \
+genomeSize=24m \
+useGrid=False \
+-pacbio /home/zoyabean/genome_analysis/link_to_paper4_data/pacbio_data/SRR6037732_scaffold_06.fq.gz
 
 # Troubleshoot off
 set +x
