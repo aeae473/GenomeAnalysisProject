@@ -15,4 +15,7 @@ module load bioinfo-tools
 module load Pilon/1.24
 
 # Run Pilon
-
+java -jar $PILON_HOME/pilon.jar \
+--genome canu_assembly/assembly_output.outfile.contigs.fasta \
+--outdir pilon_assembly \
+--output pilon_assembly.outfile
