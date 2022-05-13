@@ -15,3 +15,4 @@ module load bioinfo-tools
 module load bwa/0.7.17
 module load samtools/1.14
 
+bwa samse canu_assembly/assembly_output.outfile.contigs.fasta /$USER/genome_analysis/link_to_paper4_data/illumina_data/SRR6058604_scaffold_06.1U.fastq.gz > bwa_out.sam
